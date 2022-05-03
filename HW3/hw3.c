@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
     printf("Client is running.\n");
 
 
-    send(cSock, "GET / HTTP/1.1\r\nHost: me.go.kr\r\n\r\n", strlen("GET / HTTP/1.1\r\nHost: me.go.kr\r\n\r\n"), 0);
+    write(cSock, "GET / HTTP/1.1\r\nHost: me.go.kr\r\n\r\n", strlen("GET / HTTP/1.1\r\nHost: me.go.kr\r\n\r\n"), 0);
     
     read(cSock, buffer, BUFFER_SIZE);
     printf("%s",buffer);
